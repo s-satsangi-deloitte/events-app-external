@@ -5,7 +5,9 @@
     <li>
         <h5 class="card-title">{{ title }}</h5>
         <p class="card-text">{{ description }}</p>
-        <p class="card-text">Location: {{ location }}</p>
+        <p>
+            Location: <a href="https://google.com/maps/search/?api=1&query={{location}}">{{ location }}</a>
+        </p>
         <p class="card-text">Likes: {{ likes }}
         <div class="row gy-2 gx-3 align-items-center">
             <div class="col-auto">
