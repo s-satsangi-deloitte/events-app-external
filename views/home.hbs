@@ -3,10 +3,10 @@
   {{#events}}
     <div class="card" style="width: 18rem;">
     <li>
-        <h2>{{ title }}</h2>
-        <p>{{ description }}</p>
-        <p>Location: {{ location }}</p>
-        <p>Likes: {{ likes }}
+        <h2 class="card-title">{{ title }}</h2>
+        <p class="card-text">{{ description }}</p>
+        <p class="card-text">Location: {{ location }}</p>
+        <p class="card-text">Likes: {{ likes }}
         <form method="POST" action="/event/like">
         <input type="hidden" value="{{id}}" name="id">
         <input type="submit" value="Like" class="text-white bg-success">
