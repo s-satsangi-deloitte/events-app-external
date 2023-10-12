@@ -6,6 +6,13 @@
         <h2 class="card-title">{{ title }}</h2>
         <p class="card-text">{{ description }}</p>
         <p class="card-text">Location: {{ location }}</p>
+        <p class="card-text">
+        <ul class="comments_section">
+            {{#each comments}}
+                <li>{{this}}</li>
+            {{/each}}
+        </ul>
+        </p>        
         <p class="card-text">Likes: {{ likes }}
         <form method="POST" action="/event/like">
         <input type="hidden" value="{{id}}" name="id">
@@ -14,10 +21,6 @@
         <form method="POST" action="/event/unlike">
         <input type="hidden" value="{{id}}" name="id">
         <input type="submit" value="UN-Like"  class="text-white bg-danger">
-        </form>
-        <form method="POST" action="/event/add_comment">
-        <input type="hidden" value="{{id}}" name="id">
-        <input type="submit" value="Add-Comment"  class="text-white bg-danger">
         </form>
         </p>
     </li>
