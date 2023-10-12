@@ -7,11 +7,25 @@
         <p class="card-text">{{ description }}</p>
         <p class="card-text">Location: {{ location }}</p>
         <p class="card-text">
-        <ul class="comments_section">
-            {{#each comments}}
-                <li>{{this}}</li>
-            {{/each}}
-        </ul>
+
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Comments
+                </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <ul class="comments_section">
+                            {{#each comments}}
+                                <li>{{this}}</li>
+                            {{/each}}
+                        </ul>                    
+                    </div>
+                </div>
+            </div>
+        </div>
         </p>        
         <p class="card-text">Likes: {{ likes }}
         <form method="POST" action="/event/like">
