@@ -7,6 +7,30 @@
         <p>
             Location: <a href="https://google.com/maps/search/?api=1&query={{location}}">{{ location }}</a>
         </p>
+
+        <p class="card-text">
+
+
+<div class="accordion accordion-flush" id="accordionFlushExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+        Accordion Item #1
+      </button>
+    </h2>
+    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+               <ul class="comments_section">
+                            {{#each comments}}
+                                <li>{{this}}</li>
+                            {{/each}}
+                        </ul>                    
+
+    </div>
+  </div>
+
+        </p>        
+
+
         <p class="card-text">Likes: {{ likes }}
             <div class="row gy-2 gx-3 align-items-center" style="display: flex; justify-content:center;">
                 <div class="col-auto">
