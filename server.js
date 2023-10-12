@@ -159,32 +159,33 @@ app.post('/event/unlike',
 // create other get and post methods here - version, login,  etc
 
 // defines a route to receive a POST request to /event/add_comment to uh ... add comments
-// // app.post('/event/add_comment',    
-// //     urlencodedParser, // second argument - how to parse the uploaded content
-// //     // into req.body
-// //     (req, res) => {
-// //     // make a request to the backend microservice using the request package
-// //     // the URL for the backend service should be set in configuration 
-// //     // using an environment variable. Here, the variable is passed 
-// //     // to npm start inside package.json:
-// //     //  "start": "BACKEND_URL=http://localhost:8082 node server.js",
-// //     // changed to a put now that real data is being updated
-// //     request.put(  // first argument: url + data + formats
-// //         {
-// //             url: SERVER + '/event/add_comment',  // the microservice end point for liking an event
-// //             body: req.body,  // content of the form
-// //             headers: { // uploading json
-// //                 "Content-Type": "application/json"
-// //             },
-// //             json: true // response from backend will be json format
-// //         },
-// //         () => {  
-// //             res.redirect("/"); // redirect to the home page on successful response
-// //         });
+app.post('/event/add_comment',    
+    urlencodedParser, // second argument - how to parse the uploaded content
+    // into req.body
+    (req, res) => {
+    // make a request to the backend microservice using the request package
+    // the URL for the backend service should be set in configuration 
+    // using an environment variable. Here, the variable is passed 
+    // to npm start inside package.json:
+    //  "start": "BACKEND_URL=http://localhost:8082 node server.js",
+    // changed to a put now that real data is being updated
+    console.log(req.body);    
+    request.put(  // first argument: url + data + formats
+        {
+            url: SERVER + '/event/add_comment',  // the microservice end point for liking an event
+            body: req.body,  // content of the form
+            headers: { // uploading json
+                "Content-Type": "application/json"
+            },
+            json: true // response from backend will be json format
+        },
+        () => {  
+            res.redirect("/"); // redirect to the home page on successful response
+        });
 
-// // }
+}
 
-// );
+);
 
 
 
