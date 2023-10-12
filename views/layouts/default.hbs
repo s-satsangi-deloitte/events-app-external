@@ -6,13 +6,86 @@
   <title>Team Acela's Website</title>
   <meta name="HandheldFriendly" content="True" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <script>
+    function username() {
+    var input = document.getElementById("userInput").value;
+    var input2 = document.getElementById("userInput2").value;
+    if (input2){
+        document.getElementById("display").innerHTML = input2;
+    }
+    else{
+         document.getElementById("display").innerHTML = input;
+    }    
+    }
+  </script>
 </head>
-<body style="background-color:khaki;">
-  <div>
-      <h1>Welcome to Acela</h1>
-    {{{body}}}
-</div>
+<body style="background-color:khaki;" onload="username()">
+    <div>
+        <h1>Welcome to Acela</h1>    
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signin">Log In</button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signup">Sign Up</button>
+        <h4 align = "center"> Welcome </h4>
+        <h4 align = "center" id = "display"></h4>
 
+        <!-- Sign in Modal -->
+        <div class="modal fade" id="signin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Log In</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping">Username</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" id="userInput">
+                </div>
+                <br />
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping">Password</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="username();" data-bs-dismiss="modal">Save changes</button>
+            </div>
+            </div>
+        </div>
+        </div>
+        <!-- sign up modal -->
+        <div class="modal fade" id="signup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Sign Up</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping">Username</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" id="userInput2">
+                </div>
+                <br />
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping">Password</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+                </div>
+                <br />
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping">Re-type Password</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="username();" data-bs-dismiss="modal">Create Account</button>
+            </div>
+            </div>
+        </div>
+        </div>
+        {{{body}}}
+    </div>
+    
   <h2  style="color:blueviolet" align = "center">Add an event</h2> <br />
     <div class="container" style="width: 30rem;"> 
     <form action="/event" method="post">
