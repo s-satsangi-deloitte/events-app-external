@@ -19,6 +19,7 @@
     }
   </script>
 </head>
+
 <body style="background-color:khaki;" onload="username()">
     <div>
         <h1>Welcome to Acela</h1>    
@@ -87,6 +88,7 @@
     </div>
     
   <h2  style="color:blueviolet" align = "center">Add an event</h2> <br />
+
     <div class="container" style="width: 30rem;"> 
     <form action="/event" method="post">
     <div class="input-group mb-3">
@@ -101,8 +103,9 @@
         <span class="input-group-text" id="basic-addon1">Location</span>  
         <input type="text" name="location" class="form-control" placeholder="Location" aria-label="Location" aria-describedby="basic-addon1"> <br />
     </div>
+    <div style="display: flex; flex-direction: column; align-items: center">
         <input class="btn btn-primary" type="submit" name="submit" value="submit" />
-    
+    </div>
     </form>
     </div>
   </div>
